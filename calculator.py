@@ -1,5 +1,16 @@
 from tkinter import *
 
+window = Tk()
+window.title("Calculator")
+window.geometry("500x600+500+100")
+image = PhotoImage(file="calculator-icon.png")
+window.iconphoto(False, image)
+
+equation_text = ""
+
+equation_label = StringVar()
+
+
 def button_press(num):
 
     global equation_text
@@ -43,21 +54,12 @@ def clear():
     equation_text = ""
 
 
-window = Tk()
-window.title("Calculator")
-
-window.geometry("500x600")
-
-equation_text = ""
-
-equation_label = StringVar()
-
 label = Label(
     window,
     textvariable=equation_label,
-    font=("consolas", 20),
+    font=("consolas", 18),
     bg="gray",
-    width=24,
+    width=32,
     height=2,
 )
 label.pack()
@@ -70,6 +72,9 @@ button1 = Button(
     text=1,
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press(1),
 )
@@ -80,6 +85,9 @@ button2 = Button(
     text=2,
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press(2),
 )
@@ -90,6 +98,9 @@ button3 = Button(
     text=3,
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press(3),
 )
@@ -100,6 +111,9 @@ button4 = Button(
     text=4,
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press(4),
 )
@@ -110,6 +124,9 @@ button5 = Button(
     text=5,
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press(5),
 )
@@ -120,6 +137,9 @@ button6 = Button(
     text=6,
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press(6),
 )
@@ -130,6 +150,9 @@ button7 = Button(
     text=7,
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press(7),
 )
@@ -140,6 +163,9 @@ button8 = Button(
     text=8,
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press(8),
 )
@@ -150,6 +176,9 @@ button9 = Button(
     text=9,
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press(9),
 )
@@ -160,16 +189,22 @@ button0 = Button(
     text=0,
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press(0),
 )
-button0.grid(row=3, column=0)
+button0.grid(row=3, column=1)
 
 plus = Button(
     frame,
     text="+",
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press("+"),
 )
@@ -180,6 +215,9 @@ minus = Button(
     text="-",
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press("-"),
 )
@@ -187,9 +225,12 @@ minus.grid(row=1, column=3)
 
 multiply = Button(
     frame,
-    text="*",
+    text="×",
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press("*"),
 )
@@ -197,9 +238,12 @@ multiply.grid(row=2, column=3)
 
 divide = Button(
     frame,
-    text="/",
+    text="÷",
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=lambda: button_press("/"),
 )
@@ -210,21 +254,36 @@ equals = Button(
     text="=",
     height=4,
     width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
     font=35,
     command=equals,
 )
 equals.grid(row=3, column=2)
 
 decimal = Button(
-    frame, text=".", height=4, width=9, font=35, command=lambda: button_press(".")
+    frame,
+    text=".",
+    height=4,
+    width=9,
+    activebackground="#e6e6e6",
+    activeforeground="#808080",
+    bd=1,
+    font=35,
+    command=lambda: button_press("."),
 )
-decimal.grid(row=3, column=1)
+decimal.grid(row=3, column=0)
 
 clear = Button(
     window,
     text="clear",
-    height=4,
-    width=39,
+    activebackground="#ff4d4d",
+    activeforeground="#808080",
+    height=3,
+    width=38,
+    bg="#e60000",
+    bd=1,
     font=35,
     command=clear,
 )
